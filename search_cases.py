@@ -2,7 +2,8 @@ def simple_search(array, val,  key = lambda x: x):
 	for i in range(len(array)):
 		if (key(array[i]) == val): return i
 	return -1
-
+   # 0  1  2  3  4  5   6   7    8    9    10 
+# a = [1, 2, 3, 6, 9, 12, 13, 343, 456, 655, 3333]
 def __find_best_impl(array, val, key, left, right, _cmp):
 	if (left == right): return left
 	if (right - left == 1):
@@ -30,6 +31,9 @@ def binary_search(array, val, key = lambda x: x, _cmp = cmp):
 	n = find_best(array, val, key, _cmp)
 	if (array[n] == val): return n
 	else: return -1
+a = [9, 8, 8, 6, 4, 2, 1, 0, -1, -2]
+print binary_search(a, 8)
+
 
 def default_hash(ob, d = 4):
 	return abs(hash(ob)) % d
@@ -77,7 +81,7 @@ class OwnSet(object):
 					self.obs.insert(best_n + 1, val)
 		print self.obs
 
-	def contains(self, val):
+	def co. ntains(self, val):
 		return (binary_search(self.obs, val) == -1)
 
 	def remove(self, val):
